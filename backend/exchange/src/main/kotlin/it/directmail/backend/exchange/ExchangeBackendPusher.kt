@@ -257,6 +257,7 @@ internal class ExchangeBackendPusher(
             }
         }
     }
+
     private fun ensurePolicyKey(): String {
         backendStorage.getExtraString(EasReadStateStore.POLICY_KEY)?.takeIf { it.isNotBlank() }?.let { return it }
 
