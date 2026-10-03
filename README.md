@@ -40,6 +40,14 @@ This snapshot corresponds to the Exchange code used by the verified DirectMail s
 
 Later DirectMail commits used to prepare this export did not change the Exchange backend code.
 
+The exported `backend/exchange` and `integration` Git trees are byte-for-byte identical to the corresponding DirectMail snapshot. Their Git object identities and the core blob identities are recorded in [`SNAPSHOT.md`](SNAPSHOT.md).
+
+## Using this snapshot
+
+This repository is **not a standalone Gradle application or library build**. The Exchange module references Thunderbird Android build plugins and project modules.
+
+For development or evaluation, start from the Thunderbird Android revision recorded in [`upstream.env`](upstream.env), copy/port `backend/exchange/` into that source tree, and use [`INTEGRATION.md`](INTEGRATION.md) as the integration map. The integration files under `integration/overlay/` are exact reference snapshots, not a claim that every downstream patch should be adopted upstream unchanged.
+
 ## Implemented behavior
 
 The current backend contains support for:
