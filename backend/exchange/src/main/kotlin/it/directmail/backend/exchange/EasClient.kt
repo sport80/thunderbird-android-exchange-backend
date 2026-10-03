@@ -437,6 +437,7 @@ internal class EasClient(
             suggestedHeartbeatSeconds = suggestedHeartbeat,
         )
     }
+
     private fun parseProvisionPolicyKey(bytes: ByteArray, stage: String): String {
         val root = EasWbxml.decode(bytes)
         require(root.page == EasWbxml.PAGE_PROVISION && root.tag == EasWbxml.PROVISION_ROOT) {
